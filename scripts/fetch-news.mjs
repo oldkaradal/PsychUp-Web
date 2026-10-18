@@ -13,6 +13,13 @@ const FEEDS = [
   { name: "Medical Xpress Psychiatrie", url: "https://medicalxpress.com/rss-feed/psychology-psychiatry-news/" },
   { name: "Deutsches Ärzteblatt", url: "https://www.aerzteblatt.de/rss/news.asp", psychOnly: true },
   { name: "FDA Pressemitteilungen", url: "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml", psychOnly: true },
+  // The DGPPN has no RSS feed, so its press release list page is read as HTML.
+  {
+    name: "DGPPN",
+    html: true,
+    urls: (y) => [y, y - 1].map((n) => `https://www.dgppn.de/presse/pressemitteilungen/pressemitteilungen-${n}.html`),
+    linkPattern: /\/presse\/pressemitteilungen\/pressemitteilungen-\d{4}\/[^/]+\.html$/,
+  },
 ];
 
 // Same topic keywords as the Android app (app/src/main/java/de/psycup/app/data/Topics.kt).
@@ -87,14 +94,97 @@ export function parseFeed(xml, feed, now = Date.now()) {
   return out;
 }
 
-async function fetchFeed(feed) {
-  const res = await fetch(feed.url, {
+const GENERIC_LINK = /^(weiterlesen|mehr|mehr lesen|mehr erfahren|zur pressemitteilung|lesen|details?)[ .…»>]*$/i;
+const DATE = /(\d{2})\.(\d{2})\.(\d{4})/g;
+
+// Reads a list page of press releases: every link matching feed.linkPattern is one item.
+// Works whether the link wraps only the title or the whole teaser (date, heading, text).
+export function parseHtmlList(html, feed, pageUrl, now = Date.now()) {
+  const groups = new Map();
+  for (const m of html.matchAll(/<a\b[^>]*?href\s*=\s*["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi)) {
+    let url;
+    try {
+      url = new URL(m[1].replace(/&amp;/g, "&"), pageUrl);
+    } catch {
+      continue;
+    }
+    url.hash = "";
+    if (!feed.linkPattern.test(url.pathname)) continue;
+    const end = m.index + m[0].length;
+    const g = groups.get(url.href);
+    if (g) {
+      g.end = end;
+      continue;
+    }
+    const inner = m[2];
+    const heading = inner.match(/<h[1-6]\b[^>]*>([\s\S]*?)<\/h[1-6]>/i);
+    groups.set(url.href, {
+      url: url.href,
+      start: m.index,
+      firstEnd: end,
+      end,
+      title: clean(heading ? heading[1] : inner),
+      innerText: clean(inner),
+      innerRest: heading ? clean(inner.slice(heading.index + heading[0].length)) : "",
+    });
+  }
+  const list = [...groups.values()].sort((a, b) => a.start - b.start);
+  const out = [];
+  list.forEach((g, i) => {
+    const before = clean(html.slice(i ? list[i - 1].end : 0, g.start));
+    const after = clean(html.slice(g.firstEnd, i + 1 < list.length ? list[i + 1].start : html.length));
+    const lastOf = (t) => [...t.matchAll(DATE)].pop();
+    const d = [...g.innerText.matchAll(DATE)][0] ?? lastOf(before) ?? [...after.matchAll(DATE)][0];
+    const title = GENERIC_LINK.test(g.title) ? "" : g.title.replace(DATE, "").replace(/^[\s|·–-]+/, "").trim();
+    if (title.length < 8) return;
+    let summary = `${g.innerRest} ${after}`
+      .replace(DATE, "")
+      .replace(/\b(weiterlesen|mehr lesen|zur pressemitteilung)\b/gi, "")
+      .replace(/(gemeinsame\s+)?(pressemitteilung|stellungnahme|pressestatement)\s*$/i, "")
+      .replace(/\s+/g, " ")
+      .trim();
+    if (summary.length > 320) summary = summary.slice(0, 317).trimEnd() + "…";
+    const topics = detectTopics(`${title} ${summary}`);
+    out.push({
+      title,
+      summary,
+      url: g.url,
+      source: feed.name,
+      date: d ? Date.UTC(+d[3], +d[2] - 1, +d[1], 8) : now,
+      topics: topics.length ? topics : ["allgemein"],
+    });
+  });
+  return out;
+}
+
+async function fetchHtmlFeed(feed) {
+  let lastError;
+  for (const url of feed.urls(new Date().getUTCFullYear())) {
+    try {
+      const res = await get(url);
+      const items = parseHtmlList(await res.text(), feed, url);
+      if (items.length) return items;
+      lastError = new Error("keine Einträge gefunden");
+    } catch (e) {
+      lastError = e;
+    }
+  }
+  throw lastError;
+}
+
+async function get(url) {
+  const res = await fetch(url, {
     headers: { "User-Agent": "Mozilla/5.0 PsycUp/1.0 (+https://github.com/oldkaradal/PsychUp-Web)", Accept: "application/rss+xml, application/atom+xml, application/xml, text/xml, */*" },
     signal: AbortSignal.timeout(25000),
     redirect: "follow",
   });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return parseFeed(await res.text(), feed);
+  return res;
+}
+
+async function fetchFeed(feed) {
+  if (feed.html) return fetchHtmlFeed(feed);
+  return parseFeed(await (await get(feed.url)).text(), feed);
 }
 
 async function main() {
