@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PsycUp</title>
+<meta name="description" content="Psychiatrie-Neuigkeiten aus aller Welt und Leitlinien nach Krankheitsbild">
+<meta name="theme-color" content="#7a3b6e">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="PsycUp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Same visual system as the PsycUp portal: cool paper, ink blue for actions, plum for "mine". */
+:root {
+  --bg: #f3f5f6; --surface: #ffffff; --ink: #16232b; --muted: #5a6872; --line: #d9e0e4;
+  --accent: #2f5d8a; --accent-soft: #e3ecf5; --plum: #7a3b6e; --plum-soft: #f3e6ef;
+  --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root {
+  --bg: #0f171c; --surface: #16222a; --ink: #e4ebef; --muted: #98a7b1; --line: #2a3a44;
+  --accent: #8db8e3; --accent-soft: #1d3246; --plum: #d79bc8; --plum-soft: #3a2236; color-scheme: dark } }
+* { box-sizing: border-box }
+html, body { margin: 0 }
+body { background: var(--bg); color: var(--ink); font: 16px/1.55 var(--f-body); padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px)) }
+a { color: var(--accent) }
+button, input { font: inherit; color: inherit }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 max(16px, env(safe-area-inset-right, 0px)) 24px max(16px, env(safe-area-inset-left, 0px)) }
+header.top { position: sticky; top: 0; z-index: 5; background: var(--bg); padding-top: env(safe-area-inset-top, 0px); border-bottom: 1px solid var(--line) }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 12px }
+.brand { font: 700 26px/1 var(--f-display); letter-spacing: -0.02em; margin: 0 }
+.brand span { color: var(--plum) }
+.stamp { font: 12px var(--f-mono); color: var(--muted); text-align: right }
+.search { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); margin-top: 14px }
+.chips { display: flex; gap: 6px; overflow-x: auto; padding: 10px 0 4px; scrollbar-width: none }
+.chips.wrapit { flex-wrap: wrap; overflow: visible }
+.chip { flex: none; border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 5px 12px; cursor: pointer; font-size: 14px }
+.chip[aria-pressed="true"] { background: var(--plum-soft); border-color: var(--plum) }
+.note { font-size: 13px; color: var(--muted); margin: 6px 0 0 }
+.list { display: grid; gap: 10px; margin-top: 10px }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; min-width: 0 }
+.card .meta { display: flex; gap: 8px; align-items: center; font-size: 13px; color: var(--muted) }
+.card .meta span:first-child { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+.card h3 { font: 600 17px/1.3 var(--f-display); margin: 4px 0; text-wrap: balance }
+.card h3 a { color: var(--ink); text-decoration: none }
+.card p { margin: 0; color: var(--muted); font-size: 15px; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden }
+.tags { font-size: 12px; color: var(--plum); margin-top: 6px }
+.heart { background: none; border: 0; cursor: pointer; font-size: 20px; line-height: 1; color: var(--muted); padding: 2px 4px }
+.heart[aria-pressed="true"] { color: var(--plum) }
+h2 { font: 700 21px/1.2 var(--f-display); margin: 24px 0 2px }
+.icd { font: 12px var(--f-mono); color: var(--muted) }
+.gl .top { display: flex; gap: 8px; font-size: 13px; font-weight: 600 }
+.gl .top span:first-child { flex: 1 }
+.gl .yr { font: 12px var(--f-mono); color: var(--muted); font-weight: 400 }
+.gl .yr.new { color: var(--plum); font-weight: 500 }
+.gl a { display: block; margin-top: 3px; text-decoration: none }
+.empty { color: var(--muted); padding: 24px 4px }
+.toggle { display: flex; align-items: center; gap: 12px; margin-top: 10px }
+nav.tabs { position: fixed; inset: auto 0 0 0; z-index: 6; background: var(--surface); border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(4, 1fr); padding-bottom: env(safe-area-inset-bottom, 0px) }
+nav.tabs button { background: none; border: 0; padding: 10px 4px 9px; font-size: 13px; color: var(--muted); cursor: pointer; display: grid; justify-items: center; gap: 2px }
+nav.tabs button svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round }
+nav.tabs button[aria-selected="true"] { color: var(--plum); font-weight: 600 }
+.install { display: none; margin-top: 12px; padding: 10px 14px; border-radius: 10px; background: var(--accent-soft); font-size: 14px }
+.install button { margin-left: 8px; border: 0; background: var(--accent); color: var(--bg); border-radius: 8px; padding: 5px 12px; cursor: pointer; font-weight: 600 }
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <h1 class="brand">Psyc<span>Up</span></h1>
+  <div class="stamp" id="stamp">lädt …</div>
+</div></header>
+
+<main class="wrap">
+  <div class="install" id="install">PsycUp als App auf den Startbildschirm legen<button type="button" id="install-btn">Installieren</button></div>
+  <input class="search" id="q" type="search" placeholder="Suchen, z. B. Esketamin, Lithium, NICE" aria-label="Suchen">
+
+  <section id="view-news">
+    <div class="chips" id="news-chips"></div>
+    <div class="list" id="news"></div>
+  </section>
+  <section id="view-gl" hidden>
+    <div id="gls"></div>
+    <p class="note">Lila markiert sind Leitlinien, die 2025 oder 2026 neu erschienen oder aktualisiert wurden. Vor dem Einsatz in der Behandlung bitte die aktuelle Fassung beim Herausgeber prüfen.</p>
+  </section>
+  <section id="view-src" hidden>
+    <p class="note">Fachgesellschaften, Behörden, Zeitschriften und Praxis-Werkzeuge. Ein Tipp öffnet die Seite.</p>
+    <div id="srcs"></div>
+  </section>
+  <section id="view-topics" hidden>
+    <h2>Meine Themen</h2>
+    <p class="note">Wähle die Gebiete, die dich interessieren. Neuigkeiten und Leitlinien zeigen dann nur noch diese. Ohne Auswahl siehst du alles.</p>
+    <div class="chips wrapit" id="topic-chips"></div>
+    <p><button class="chip" type="button" id="clear">Auswahl leeren</button></p>
+    <h2>Über die Neuigkeiten</h2>
+    <p class="note">Die Meldungen kommen alle paar Stunden frisch aus den Feeds von Psychiatric Times, ScienceDaily, Mental Elf, JAMA Psychiatry, Lancet Psychiatry, AJP, Medical Xpress, Ärzteblatt und FDA, meist in der Originalsprache Englisch. Gemerkte Meldungen und deine Themen speichert nur dieser Browser.</p>
+  </section>
+</main>
+
+<nav class="tabs" role="tablist">
+  <button type="button" role="tab" data-tab="news"><svg viewBox="0 0 24 24"><path d="M4 5h13v14H6a2 2 0 0 1-2-2z"/><path d="M17 9h3v8a2 2 0 0 1-2 2"/><path d="M8 9h5M8 13h5"/></svg>Neuigkeiten</button>
+  <button type="button" role="tab" data-tab="gl"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M9 11h7M9 15h7M9 7h3"/></svg>Leitlinien</button>
+  <button type="button" role="tab" data-tab="src"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>Quellen</button>
+  <button type="button" role="tab" data-tab="topics"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>Themen</button>
+</nav>
+
+<script>
+const TOPICS = {depression:"Depression", bipolar:"Bipolare Störung", schizophrenie:"Schizophrenie & Psychosen", angst:"Angststörungen", zwang:"Zwangsstörung", ptbs:"Trauma & PTBS", adhs:"ADHS", autismus:"Autismus", sucht:"Sucht", demenz:"Demenz", essstoerung:"Essstörungen", persoenlichkeit:"Borderline & Persönlichkeit", schlaf:"Insomnie & Schlaf", suizid:"Suizidalität", delir:"Delir", allgemein:"Allgemein & Versorgung"};
+const KINDS = {leitlinien:"Leitlinien & Fachgesellschaften", behoerde:"Behörden, Zulassung & Arzneimittelsicherheit", journal:"Fachzeitschriften & Evidenz", news:"Fachnachrichten", tools:"Praxis-Werkzeuge & Nachschlagen"};
+const store = {
+  get(k, d) { try { const v = localStorage.getItem("psycup." + k); return v ? JSON.parse(v) : d } catch { return d } },
+  set(k, v) { try { localStorage.setItem("psycup." + k, JSON.stringify(v)) } catch {} }
+};
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const day = t => new Date(t).toLocaleDateString("de-DE", {day: "numeric", month: "short", year: "numeric"});
+
+let mine = new Set(store.get("topics", []));
+let saved = store.get("saved", []);
+let tab = store.get("tab", "news");
+let filter = null; // null = all, "saved", or a topic key
+let news = [], guidelines = [], sources = [];
+
+const active = keys => mine.size === 0 || keys.some(k => mine.has(k));
+const q = () => $("q").value.trim().toLowerCase();
+
+function card(n) {
+  const isSaved = saved.some(s => s.url === n.url);
+  const tags = (n.topics || []).filter(t => t !== "allgemein" && TOPICS[t]).map(t => TOPICS[t]).join(" · ");
+  return `<article class="card">
+    <div class="meta"><span>${esc(n.source)} · ${day(n.date)}</span>
+      <button class="heart" type="button" data-url="${esc(n.url)}" aria-pressed="${isSaved}" aria-label="${isSaved ? "Nicht mehr merken" : "Merken"}">${isSaved ? "♥" : "♡"}</button></div>
+    <h3><a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.title)}</a></h3>
+    ${n.summary ? `<p>${esc(n.summary)}</p>` : ""}
+    ${tags ? `<div class="tags">${esc(tags)}</div>` : ""}
+  </article>`;
+}
+
+function renderNews() {
+  const chips = [["saved", "Gemerkt"], ...[...mine].sort().map(k => [k, TOPICS[k]])];
+  $("news-chips").innerHTML = chips.map(([k, n]) => `<button class="chip" type="button" data-f="${k}" aria-pressed="${filter === k}">${esc(n)}</button>`).join("");
+  const s = q();
+  const base = filter === "saved" ? saved : news;
+  const list = base.filter(n =>
+    (filter === "saved" || active(n.topics || [])) &&
+    (!filter || filter === "saved" || (n.topics || []).includes(filter)) &&
+    (!s || `${n.title} ${n.summary} ${n.source}`.toLowerCase().includes(s)));
+  $("news").innerHTML = list.length ? list.slice(0, 200).map(card).join("") :
+    `<p class="empty">${filter === "saved" ? "Noch nichts gemerkt. Tippe bei einer Meldung auf das Herz." : news.length ? "Zu deiner Auswahl gibt es gerade keine Meldungen. Wähle unter Themen weitere Gebiete oder leere die Suche." : "Die Neuigkeiten werden geladen."}</p>`;
+}
+
+function renderGl() {
+  const s = q();
+  const html = guidelines.filter(d => mine.size === 0 || mine.has(d.key)).map(d => {
+    const rows = d.guidelines.filter(g => !s || d.name.toLowerCase().includes(s) || `${g.org} ${g.region} ${g.title} ${g.year}`.toLowerCase().includes(s));
+    if (!rows.length) return "";
+    return `<h2>${esc(d.name)}</h2>${d.icd ? `<div class="icd">ICD-10 / ICD-11 ${esc(d.icd)}</div>` : ""}
+      <div class="list">${rows.map(g => `<div class="card gl"><div class="top"><span>${esc(g.org)} · ${esc(g.region)}</span><span class="yr${/202[56]/.test(g.year) ? " new" : ""}">${esc(g.year || "–")}</span></div>
+      <a href="${esc(g.url)}" target="_blank" rel="noopener">${esc(g.title)}</a></div>`).join("")}</div>`;
+  }).join("");
+  $("gls").innerHTML = html || `<p class="empty">Keine Leitlinie passt zu deiner Suche.</p>`;
+}
+
+function renderSrc() {
+  const s = q();
+  $("srcs").innerHTML = Object.entries(KINDS).map(([k, title]) => {
+    const rows = sources.filter(x => x.kind === k && (!s || `${x.name} ${x.note}`.toLowerCase().includes(s))).sort((a, b) => a.name.localeCompare(b.name, "de"));
+    if (!rows.length) return "";
+    return `<h2>${esc(title)}</h2><div class="list">${rows.map(x => `<div class="card gl"><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name)}${x.region ? ` · ${esc(x.region)}` : ""}</a>${x.note ? `<p>${esc(x.note)}</p>` : ""}</div>`).join("")}</div>`;
+  }).join("");
+}
+
+function renderTopics() {
+  $("topic-chips").innerHTML = Object.entries(TOPICS).map(([k, n]) => `<button class="chip" type="button" data-k="${k}" aria-pressed="${mine.has(k)}">${esc(n)}</button>`).join("");
+}
+
+function render() {
+  for (const b of document.querySelectorAll("nav.tabs button")) b.setAttribute("aria-selected", b.dataset.tab === tab);
+  for (const t of ["news", "gl", "src", "topics"]) $("view-" + t).hidden = t !== tab;
+  $("q").hidden = tab === "topics";
+  renderNews(); renderGl(); renderSrc(); renderTopics();
+}
+
+document.querySelector("nav.tabs").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  tab = b.dataset.tab; store.set("tab", tab); render(); window.scrollTo(0, 0);
+});
+$("news-chips").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  filter = filter === b.dataset.f ? null : b.dataset.f; renderNews();
+});
+$("topic-chips").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  mine.has(b.dataset.k) ? mine.delete(b.dataset.k) : mine.add(b.dataset.k);
+  store.set("topics", [...mine]); if (filter && filter !== "saved" && !mine.has(filter)) filter = null; render();
+});
+$("clear").onclick = () => { mine = new Set(); store.set("topics", []); filter = null; render() };
+$("q").addEventListener("input", () => { renderNews(); renderGl(); renderSrc() });
+document.addEventListener("click", e => {
+  const h = e.target.closest(".heart"); if (!h) return;
+  const url = h.dataset.url;
+  if (saved.some(s => s.url === url)) saved = saved.filter(s => s.url !== url);
+  else { const n = news.find(x => x.url === url); if (n) saved = [n, ...saved] }
+  store.set("saved", saved); renderNews();
+});
+
+// Offer installation where the browser supports the prompt (Chrome on Android).
+let installEvent = null;
+addEventListener("beforeinstallprompt", e => { e.preventDefault(); installEvent = e; $("install").style.display = "block" });
+$("install-btn").onclick = async () => { if (!installEvent) return; installEvent.prompt(); await installEvent.userChoice; installEvent = null; $("install").style.display = "none" };
+
+async function load() {
+  const get = async p => (await fetch(p, {cache: "no-cache"})).json();
+  try {
+    [guidelines, sources] = await Promise.all([get("data/guidelines.json").then(d => d.disorders), get("data/sources.json")]);
+  } catch {}
+  render();
+  try {
+    const d = await get("data/news.json");
+    news = d.items || [];
+    $("stamp").textContent = `Stand ${new Date(d.updated).toLocaleString("de-DE", {day: "numeric", month: "short", hour: "2-digit", minute: "2-digit"})}`;
+  } catch {
+    $("stamp").textContent = "offline";
+  }
+  render();
+}
+render();
+load();
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
+</body>
+</html>

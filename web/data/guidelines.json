@@ -1,0 +1,606 @@
+{
+ "disorders": [
+  {
+   "key": "depression",
+   "name": "Depression",
+   "icd": "F32–F33 · 6A70–6A71",
+   "guidelines": [
+    {
+     "org": "DGPPN u. a. (NVL)",
+     "region": "DE",
+     "title": "Nationale VersorgungsLeitlinie Unipolare Depression",
+     "year": "2022",
+     "url": "https://register.awmf.org/de/leitlinien/detail/nvl-005"
+    },
+    {
+     "org": "NICE",
+     "region": "UK",
+     "title": "Depression in adults: treatment and management (NG222)",
+     "year": "2022",
+     "url": "https://www.nice.org.uk/guidance/ng222"
+    },
+    {
+     "org": "NICE",
+     "region": "UK",
+     "title": "Depression in children and young people (NG134)",
+     "year": "2019",
+     "url": "https://www.nice.org.uk/guidance/ng134"
+    },
+    {
+     "org": "CANMAT",
+     "region": "CA",
+     "title": "Clinical Guidelines for Major Depressive Disorder, Update",
+     "year": "2023",
+     "url": "https://www.canmat.org/"
+    },
+    {
+     "org": "VA/DoD",
+     "region": "US",
+     "title": "Management of Major Depressive Disorder",
+     "year": "2022",
+     "url": "https://www.healthquality.va.gov/"
+    },
+    {
+     "org": "RANZCP",
+     "region": "AU/NZ",
+     "title": "Clinical Practice Guidelines for Mood Disorders",
+     "year": "2020",
+     "url": "https://www.ranzcp.org/clinical-guidelines-publications"
+    },
+    {
+     "org": "WFSBP",
+     "region": "INT",
+     "title": "Biologische Behandlung unipolarer depressiver Störungen",
+     "year": "",
+     "url": "https://www.wfsbp.org/educational-activities/wfsbp-treatment-guidelines-and-consensus-papers/"
+    },
+    {
+     "org": "BAP",
+     "region": "UK",
+     "title": "Evidence-based guidelines for treating depressive disorders with antidepressants",
+     "year": "",
+     "url": "https://www.bap.org.uk/guidelines"
+    }
+   ]
+  },
+  {
+   "key": "bipolar",
+   "name": "Bipolare Störung",
+   "icd": "F31 · 6A60–6A61",
+   "guidelines": [
+    {
+     "org": "DGBS/DGPPN",
+     "region": "DE",
+     "title": "S3-Leitlinie Bipolare Störungen",
+     "year": "2019",
+     "url": "https://register.awmf.org/de/leitlinien/detail/038-019"
+    },
+    {
+     "org": "NICE",
+     "region": "UK",
+     "title": "Bipolar disorder: assessment and management (CG185)",
+     "year": "2014, akt. 2023",
+     "url": "https://www.nice.org.uk/guidance/cg185"
+    },
+    {
+     "org": "CANMAT/ISBD",
+     "region": "CA/INT",
+     "title": "Guidelines for the management of patients with bipolar disorder",
+     "year": "2018",
+     "url": "https://www.canmat.org/"
+    },
+    {
+     "org": "VA/DoD",
+     "region": "US",
+     "title": "Management of Bipolar Disorder",
+     "year": "2023",
+     "url": "https://www.healthquality.va.gov/"
+    },
+    {
+     "org": "RANZCP",
+     "region": "AU/NZ",
+     "title": "Clinical Practice Guidelines for Mood Disorders",
+     "year": "2020",
+     "url": "https://www.ranzcp.org/clinical-guidelines-publications"
+    },
+    {
+     "org": "BAP",
+     "region": "UK",
+     "title": "Evidence-based guidelines for treating bipolar disorder",
+     "year": "2016",
+     "url": "https://www.bap.org.uk/guidelines"
+    },
+    {
+     "org": "WFSBP",
+     "region": "INT",
+     "title": "Biologische Behandlung bipolarer Störungen",
+     "year": "",
+     "url": "https://www.wfsbp.org/educational-activities/wfsbp-treatment-guidelines-and-consensus-papers/"
+    }
+   ]
+  },
+  {
+   "key": "schizophrenie",
+   "name": "Schizophrenie & Psychosen",
+   "icd": "F20–F29 · 6A20–6A25",
+   "guidelines": [
+    {
+     "org": "DGPPN",
+     "region": "DE",
+     "title": "S3-Leitlinie Schizophrenie (living guideline, Version 5.0)",
+     "year": "2026",
+     "url": "https://register.awmf.org/de/leitlinien/detail/038-009"
+    },
+    {
+     "org": "DGPPN/DG-Sucht",
+     "region": "DE",
+     "title": "S3-Leitlinie Psychosen mit komorbider substanzbezogener Störung",
+     "year": "2026",
+     "url": "https://register.awmf.org/de/leitlinien/detail/038-027"
+    },
+    {
+     "org": "NICE",
+     "region": "UK",
+     "title": "Psychosis and schizophrenia in adults (CG178)",
+     "year": "2014, akt. 2026",
+     "url": "https://www.nice.org.uk/guidance/cg178"
+    },
+    {
+     "org": "APA",
+     "region": "US",
+     "title": "Practice Guideline for the Treatment of Patients With Schizophrenia, 3rd ed.",
+     "year": "2020",
+     "url": "https://www.psychiatry.org/psychiatrists/practice/clinical-practice-guidelines"
+    },
+    {
+     "org": "RANZCP",
+     "region": "AU/NZ",
+     "title": "Clinical Practice Guidelines for Schizophrenia and Related Disorders",
+     "year": "2016",
+     "url": "https://www.ranzcp.org/clinical-guidelines-publications"
+    },
+    {
+     "org": "WFSBP",
+     "region": "INT",
+     "title": "Biologische Behandlung der Schizophrenie",
+     "year": "",
+     "url": "https://www.wfsbp.org/educational-activities/wfsbp-treatment-guidelines-and-consensus-papers/"
+    }
+   ]
+  },
+  {
+   "key": "angst",
+   "name": "Angststörungen",
+   "icd": "F40–F41 · 6B00–6B04",
+   "guidelines": [
+    {
+     "org": "DGPM/DGPPN u. a.",
+     "region": "DE",
+     "title": "S3-Leitlinie Behandlung von Angststörungen",
+     "year": "2021",
+     "url": "https://register.awmf.org/de/leitlinien/detail/051-028"
+    },
+    {
+     "org": "NICE",
+     "region": "UK",
+     "title": "Generalised anxiety disorder and panic disorder in adults (CG113)",
+     "year": "2011, akt. 2020",
+     "url": "https://www.nice.org.uk/guidance/cg113"
+    },
+    {
+     "org": "NICE",
+     "region": "UK",
+     "title": "Social anxiety disorder (CG159)",
+     "year": "2013",
+     "url": "https://www.nice.org.uk/guidance/cg159"
+    },
+    {
+     "org": "BAP",
+     "region": "UK",
+     "title": "Evidence-based pharmacological treatment of anxiety disorders",
+     "year": "",
+     "url": "https://www.bap.org.uk/guidelines"
+    },
+    {
+     "org": "WFSBP",
+     "region": "INT",
+     "title": "Pharmakologische Behandlung von Angst-, Zwangs- und Belastungsstörungen",
+     "year": "",
+     "url": "https://www.wfsbp.org/educational-activities/wfsbp-treatment-guidelines-and-consensus-papers/"
+    }
+   ]
+  },
+  {
+   "key": "zwang",
+   "name": "Zwangsstörung",
+   "icd": "F42 · 6B20",
+   "guidelines": [
+    {
+     "org": "DGPPN",
+     "region": "DE",
+     "title": "S3-Leitlinie Zwangsstörungen",
+     "year": "2022",
+     "url": "https://register.awmf.org/de/leitlinien/detail/038-017"
+    },
+    {
+     "org": "NICE",
+     "region": "UK",
+     "title": "Obsessive-compulsive disorder and body dysmorphic disorder (CG31)",
+     "year": "2005",
+     "url": "https://www.nice.org.uk/guidance/cg31"
+    },
+    {
+     "org": "APA",
+     "region": "US",
+     "title": "Practice Guideline for Obsessive-Compulsive Disorder",
+     "year": "2007",
+     "url": "https://www.psychiatry.org/psychiatrists/practice/clinical-practice-guidelines"
+    },
+    {
+     "org": "WFSBP",
+     "region": "INT",
+     "title": "Pharmakologische Behandlung von Angst-, Zwangs- und Belastungsstörungen",
+     "year": "",
+     "url": "https://www.wfsbp.org/educational-activities/wfsbp-treatment-guidelines-and-consensus-papers/"
+    }
+   ]
+  },
+  {
+   "key": "ptbs",
+   "name": "Trauma & PTBS",
+   "icd": "F43.1 · 6B40–6B41",
+   "guidelines": [
+    {
+     "org": "DeGPT u. a.",
+     "region": "DE",
+     "title": "S3-Leitlinie Posttraumatische Belastungsstörung",
+     "year": "2026",
+     "url": "https://register.awmf.org/de/leitlinien/detail/155-001"
+    },
+    {
+     "org": "NICE",
+     "region": "UK",
+     "title": "Post-traumatic stress disorder (NG116)",
+     "year": "2018",
+     "url": "https://www.nice.org.uk/guidance/ng116"
+    },
+    {
+     "org": "VA/DoD",
+     "region": "US",
+     "title": "Management of PTSD and Acute Stress Disorder",
+     "year": "2023",
+     "url": "https://www.healthquality.va.gov/"
+    },
+    {
+     "org": "American Psychological Association",
+     "region": "US",
+     "title": "Clinical Practice Guideline for the Treatment of PTSD",
+     "year": "2025",
+     "url": "https://www.apa.org/ptsd-guideline"
+    },
+    {
+     "org": "ISTSS",
+     "region": "INT",
+     "title": "Posttraumatic Stress Disorder Prevention and Treatment Guidelines",
+     "year": "2019",
+     "url": "https://istss.org/clinical-resources/treating-trauma/new-istss-prevention-and-treatment-guidelines"
+    }
+   ]
+  },
+  {
+   "key": "adhs",
+   "name": "ADHS",
+   "icd": "F90 · 6A05",
+   "guidelines": [
+    {
+     "org": "DGKJP/DGPPN u. a.",
+     "region": "DE",
+     "title": "S3-Leitlinie ADHS im Kindes-, Jugend- und Erwachsenenalter",
+     "year": "2025",
+     "url": "https://register.awmf.org/de/leitlinien/detail/028-045"
+    },
+    {
+     "org": "NICE",
+     "region": "UK",
+     "title": "ADHD: diagnosis and management (NG87)",
+     "year": "2018, akt. 2019",
+     "url": "https://www.nice.org.uk/guidance/ng87"
+    },
+    {
+     "org": "CADDRA",
+     "region": "CA",
+     "title": "Canadian ADHD Practice Guidelines",
+     "year": "2020",
+     "url": "https://www.caddra.ca/"
+    },
+    {
+     "org": "APSARD",
+     "region": "US",
+     "title": "US Adult ADHD Guidelines (erste US-Leitlinie für Erwachsene)",
+     "year": "in Vorbereitung",
+     "url": "https://www.psychiatrictimes.com/view/the-new-impending-adult-adhd-guidelines"
+    }
+   ]
+  },
+  {
+   "key": "autismus",
+   "name": "Autismus",
+   "icd": "F84 · 6A02",
+   "guidelines": [
+    {
+     "org": "DGKJP/DGPPN",
+     "region": "DE",
+     "title": "S3-Leitlinie Autismus-Spektrum-Störungen: Diagnostik",
+     "year": "2016",
+     "url": "https://register.awmf.org/de/leitlinien/detail/028-018"
+    },
+    {
+     "org": "DGKJP/DGPPN",
+     "region": "DE",
+     "title": "S3-Leitlinie Autismus-Spektrum-Störungen: Therapie",
+     "year": "2021",
+     "url": "https://register.awmf.org/de/leitlinien/detail/028-047"
+    },
+    {
+     "org": "NICE",
+     "region": "UK",
+     "title": "Autism spectrum disorder in adults (CG142)",
+     "year": "2012, akt. 2021",
+     "url": "https://www.nice.org.uk/guidance/cg142"
+    },
+    {
+     "org": "NICE",
+     "region": "UK",
+     "title": "Autism spectrum disorder in under 19s: recognition and diagnosis (CG128)",
+     "year": "2011, akt. 2017",
+     "url": "https://www.nice.org.uk/guidance/cg128"
+    }
+   ]
+  },
+  {
+   "key": "sucht",
+   "name": "Sucht",
+   "icd": "F10–F19 · 6C40–6C4H",
+   "guidelines": [
+    {
+     "org": "DG-Sucht/DGPPN",
+     "region": "DE",
+     "title": "S3-Leitlinie Alkoholbezogene Störungen",
+     "year": "2021",
+     "url": "https://register.awmf.org/de/leitlinien/detail/076-001"
+    },
+    {
+     "org": "DG-Sucht/DGPPN",
+     "region": "DE",
+     "title": "S3-Leitlinie Rauchen und Tabakabhängigkeit",
+     "year": "2021",
+     "url": "https://register.awmf.org/de/leitlinien/detail/076-006"
+    },
+    {
+     "org": "DGPPN u. a.",
+     "region": "DE",
+     "title": "S3-Leitlinie Methamphetamin-bezogene Störungen",
+     "year": "2016",
+     "url": "https://register.awmf.org/de/leitlinien/detail/038-024"
+    },
+    {
+     "org": "NICE",
+     "region": "UK",
+     "title": "Alcohol-use disorders: diagnosis and management (CG115)",
+     "year": "2011",
+     "url": "https://www.nice.org.uk/guidance/cg115"
+    },
+    {
+     "org": "APA",
+     "region": "US",
+     "title": "Pharmacological Treatment of Patients With Alcohol Use Disorder",
+     "year": "2018",
+     "url": "https://www.psychiatry.org/psychiatrists/practice/clinical-practice-guidelines"
+    },
+    {
+     "org": "ASAM",
+     "region": "US",
+     "title": "National Practice Guideline for the Treatment of Opioid Use Disorder",
+     "year": "2020",
+     "url": "https://www.asam.org/quality-care/clinical-guidelines/national-practice-guideline"
+    }
+   ]
+  },
+  {
+   "key": "demenz",
+   "name": "Demenz",
+   "icd": "F00–F03 · 6D80–6D86",
+   "guidelines": [
+    {
+     "org": "DGPPN/DGN",
+     "region": "DE",
+     "title": "S3-Leitlinie Demenzen",
+     "year": "2026",
+     "url": "https://register.awmf.org/de/leitlinien/detail/038-013"
+    },
+    {
+     "org": "NICE",
+     "region": "UK",
+     "title": "Dementia: assessment, management and support (NG97)",
+     "year": "2018",
+     "url": "https://www.nice.org.uk/guidance/ng97"
+    }
+   ]
+  },
+  {
+   "key": "essstoerung",
+   "name": "Essstörungen",
+   "icd": "F50 · 6B80–6B85",
+   "guidelines": [
+    {
+     "org": "DGPM/DGPPN u. a.",
+     "region": "DE",
+     "title": "S3-Leitlinie Diagnostik und Behandlung der Essstörungen",
+     "year": "",
+     "url": "https://register.awmf.org/de/leitlinien/detail/051-026"
+    },
+    {
+     "org": "NICE",
+     "region": "UK",
+     "title": "Eating disorders: recognition and treatment (NG69)",
+     "year": "2017, akt. 2020",
+     "url": "https://www.nice.org.uk/guidance/ng69"
+    },
+    {
+     "org": "APA",
+     "region": "US",
+     "title": "Practice Guideline for the Treatment of Patients With Eating Disorders",
+     "year": "2023",
+     "url": "https://www.psychiatry.org/psychiatrists/practice/clinical-practice-guidelines"
+    },
+    {
+     "org": "RANZCP",
+     "region": "AU/NZ",
+     "title": "Clinical Practice Guidelines for the Treatment of Eating Disorders",
+     "year": "2014",
+     "url": "https://www.ranzcp.org/clinical-guidelines-publications"
+    }
+   ]
+  },
+  {
+   "key": "persoenlichkeit",
+   "name": "Borderline & Persönlichkeit",
+   "icd": "F60 · 6D10–6D11",
+   "guidelines": [
+    {
+     "org": "DGPPN",
+     "region": "DE",
+     "title": "S3-Leitlinie Borderline-Persönlichkeitsstörung",
+     "year": "2022",
+     "url": "https://register.awmf.org/de/leitlinien/detail/038-015"
+    },
+    {
+     "org": "NICE",
+     "region": "UK",
+     "title": "Borderline personality disorder: recognition and management (CG78)",
+     "year": "2009",
+     "url": "https://www.nice.org.uk/guidance/cg78"
+    },
+    {
+     "org": "APA",
+     "region": "US",
+     "title": "Practice Guideline for the Treatment of Patients With Borderline Personality Disorder",
+     "year": "2024",
+     "url": "https://www.psychiatry.org/psychiatrists/practice/clinical-practice-guidelines"
+    }
+   ]
+  },
+  {
+   "key": "schlaf",
+   "name": "Insomnie",
+   "icd": "F51 · 7A00",
+   "guidelines": [
+    {
+     "org": "DGSM",
+     "region": "DE",
+     "title": "S3-Leitlinie Insomnie bei Erwachsenen",
+     "year": "",
+     "url": "https://register.awmf.org/de/leitlinien/detail/063-003"
+    },
+    {
+     "org": "ESRS",
+     "region": "EU",
+     "title": "European Insomnia Guideline",
+     "year": "2023",
+     "url": "https://esrs.eu/"
+    },
+    {
+     "org": "AASM",
+     "region": "US",
+     "title": "Clinical Practice Guidelines: Insomnia (behavioral and pharmacologic)",
+     "year": "2017/2021",
+     "url": "https://aasm.org/clinical-resources/practice-standards/practice-guidelines/"
+    }
+   ]
+  },
+  {
+   "key": "suizid",
+   "name": "Suizidalität & Selbstverletzung",
+   "icd": "X60–X84",
+   "guidelines": [
+    {
+     "org": "NICE",
+     "region": "UK",
+     "title": "Self-harm: assessment, management and preventing recurrence (NG225)",
+     "year": "2022",
+     "url": "https://www.nice.org.uk/guidance/ng225"
+    },
+    {
+     "org": "VA/DoD",
+     "region": "US",
+     "title": "Assessment and Management of Patients at Risk for Suicide",
+     "year": "2024",
+     "url": "https://www.healthquality.va.gov/"
+    },
+    {
+     "org": "WHO",
+     "region": "INT",
+     "title": "LIVE LIFE: Implementation guide for suicide prevention",
+     "year": "2021",
+     "url": "https://www.who.int/publications/i/item/9789240026629"
+    }
+   ]
+  },
+  {
+   "key": "delir",
+   "name": "Delir",
+   "icd": "F05 · 6D70",
+   "guidelines": [
+    {
+     "org": "APA",
+     "region": "US",
+     "title": "Practice Guideline for the Prevention and Treatment of Delirium",
+     "year": "2025",
+     "url": "https://www.psychiatry.org/news-room/news-releases/apa-published-updated-guideline-for-delirium"
+    },
+    {
+     "org": "NICE",
+     "region": "UK",
+     "title": "Delirium: prevention, diagnosis and management (CG103)",
+     "year": "2010, akt. 2023",
+     "url": "https://www.nice.org.uk/guidance/cg103"
+    },
+    {
+     "org": "DGAI/DIVI",
+     "region": "DE",
+     "title": "S3-Leitlinie Analgesie, Sedierung und Delirmanagement in der Intensivmedizin",
+     "year": "",
+     "url": "https://register.awmf.org/de/leitlinien/detail/001-012"
+    }
+   ]
+  },
+  {
+   "key": "allgemein",
+   "name": "Allgemein & Versorgung",
+   "icd": "",
+   "guidelines": [
+    {
+     "org": "DGPPN",
+     "region": "DE",
+     "title": "S3-Leitlinie Psychosoziale Therapien bei schweren psychischen Erkrankungen",
+     "year": "2026",
+     "url": "https://register.awmf.org/de/leitlinien/detail/038-020"
+    },
+    {
+     "org": "DGPPN",
+     "region": "DE",
+     "title": "S3-Leitlinie Verhinderung von Zwang in der Psychiatrie",
+     "year": "",
+     "url": "https://register.awmf.org/de/leitlinien/detail/038-022"
+    },
+    {
+     "org": "WHO",
+     "region": "INT",
+     "title": "mhGAP Guideline for mental, neurological and substance use disorders",
+     "year": "2023",
+     "url": "https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,386 @@
+[
+ {
+  "active": true,
+  "kind": "news",
+  "name": "Deutsches Ärzteblatt",
+  "note": "Gesundheitspolitik, Studien, Versorgung",
+  "region": "DE",
+  "url": "https://www.aerzteblatt.de/"
+ },
+ {
+  "active": true,
+  "kind": "tools",
+  "name": "AGNP (TDM-Konsensus)",
+  "note": "Therapeutisches Drug Monitoring, Referenzbereiche",
+  "region": "DE",
+  "url": "https://www.agnp.de/"
+ },
+ {
+  "active": true,
+  "kind": "journal",
+  "name": "American Journal of Psychiatry",
+  "note": "",
+  "region": "US",
+  "url": "https://psychiatryonline.org/journal/ajp"
+ },
+ {
+  "active": true,
+  "kind": "behoerde",
+  "name": "AkdÄ",
+  "note": "Arzneimittelkommission der deutschen Ärzteschaft: Drug Safety Mails",
+  "region": "DE",
+  "url": "https://www.akdae.de/"
+ },
+ {
+  "active": true,
+  "kind": "tools",
+  "name": "AMBOSS",
+  "note": "Nachschlagewerk für Klinik und Facharztprüfung",
+  "region": "DE",
+  "url": "https://www.amboss.com/de"
+ },
+ {
+  "active": true,
+  "kind": "leitlinien",
+  "name": "APA Practice Guidelines",
+  "note": "American Psychiatric Association",
+  "region": "US",
+  "url": "https://www.psychiatry.org/psychiatrists/practice/clinical-practice-guidelines"
+ },
+ {
+  "active": true,
+  "kind": "leitlinien",
+  "name": "APA News Releases",
+  "note": "Pressemitteilungen der American Psychiatric Association",
+  "region": "US",
+  "url": "https://www.psychiatry.org/news-room/news-releases"
+ },
+ {
+  "active": true,
+  "kind": "news",
+  "name": "arznei-telegramm",
+  "note": "Unabhängige Arzneimittelbewertung",
+  "region": "DE",
+  "url": "https://www.arznei-telegramm.de/"
+ },
+ {
+  "active": true,
+  "kind": "leitlinien",
+  "name": "AWMF-Leitlinienregister",
+  "note": "Alle deutschen S1- bis S3-Leitlinien, inkl. neuer und angemeldeter Leitlinien",
+  "region": "DE",
+  "url": "https://register.awmf.org/de/start"
+ },
+ {
+  "active": true,
+  "kind": "leitlinien",
+  "name": "British Association for Psychopharmacology",
+  "note": "Psychopharmakologische Leitlinien",
+  "region": "UK",
+  "url": "https://www.bap.org.uk/guidelines"
+ },
+ {
+  "active": true,
+  "kind": "behoerde",
+  "name": "BfArM",
+  "note": "Rote-Hand-Briefe, Risikoinformationen, ICD-10-GM",
+  "region": "DE",
+  "url": "https://www.bfarm.de/"
+ },
+ {
+  "active": true,
+  "kind": "journal",
+  "name": "British Journal of Psychiatry",
+  "note": "",
+  "region": "UK",
+  "url": "https://www.cambridge.org/core/journals/the-british-journal-of-psychiatry"
+ },
+ {
+  "active": true,
+  "kind": "leitlinien",
+  "name": "CANMAT",
+  "note": "Kanadische Leitlinien zu Depression und Bipolarer Störung",
+  "region": "CA",
+  "url": "https://www.canmat.org/"
+ },
+ {
+  "active": true,
+  "kind": "tools",
+  "name": "ClinicalTrials.gov",
+  "note": "Laufende Studien suchen",
+  "region": "INT",
+  "url": "https://clinicaltrials.gov/"
+ },
+ {
+  "active": true,
+  "kind": "journal",
+  "name": "Cochrane Library",
+  "note": "Systematische Reviews",
+  "region": "INT",
+  "url": "https://www.cochranelibrary.com/"
+ },
+ {
+  "active": true,
+  "kind": "tools",
+  "name": "CredibleMeds",
+  "note": "QTc-Risiko von Medikamenten",
+  "region": "US",
+  "url": "https://www.crediblemeds.org/"
+ },
+ {
+  "active": true,
+  "kind": "leitlinien",
+  "name": "DGKJP",
+  "note": "Kinder- und Jugendpsychiatrie: Leitlinien und Stellungnahmen",
+  "region": "DE",
+  "url": "https://www.dgkjp.de/"
+ },
+ {
+  "active": true,
+  "kind": "leitlinien",
+  "name": "DGPPN",
+  "note": "Fachgesellschaft: Leitlinien, Stellungnahmen, Kongress, Weiterbildung",
+  "region": "DE",
+  "url": "https://www.dgppn.de/"
+ },
+ {
+  "active": true,
+  "kind": "journal",
+  "name": "BMJ Mental Health",
+  "note": "Früher Evidence-Based Mental Health",
+  "region": "UK",
+  "url": "https://mentalhealth.bmj.com/"
+ },
+ {
+  "active": true,
+  "kind": "behoerde",
+  "name": "EMA",
+  "note": "Europäische Zulassungen, CHMP-Empfehlungen",
+  "region": "EU",
+  "url": "https://www.ema.europa.eu/en/news"
+ },
+ {
+  "active": true,
+  "kind": "tools",
+  "name": "Embryotox",
+  "note": "Psychopharmaka in Schwangerschaft und Stillzeit",
+  "region": "DE",
+  "url": "https://www.embryotox.de/"
+ },
+ {
+  "active": true,
+  "kind": "leitlinien",
+  "name": "European Psychiatric Association",
+  "note": "Europäische Guidance Papers",
+  "region": "EU",
+  "url": "https://www.europsy.net/"
+ },
+ {
+  "active": true,
+  "kind": "journal",
+  "name": "European Psychiatry",
+  "note": "Journal der EPA, frei zugänglich",
+  "region": "EU",
+  "url": "https://www.cambridge.org/core/journals/european-psychiatry"
+ },
+ {
+  "active": true,
+  "kind": "behoerde",
+  "name": "FDA Drug Approvals",
+  "note": "Neuzulassungen und Sicherheitsmeldungen",
+  "region": "US",
+  "url": "https://www.fda.gov/drugs/news-events-human-drugs"
+ },
+ {
+  "active": true,
+  "kind": "behoerde",
+  "name": "G-BA",
+  "note": "Richtlinien (z. B. Psychotherapie), Nutzenbewertungen neuer Medikamente",
+  "region": "DE",
+  "url": "https://www.g-ba.de/"
+ },
+ {
+  "active": true,
+  "kind": "tools",
+  "name": "Gelbe Liste",
+  "note": "Arzneimittelinfos, Fachinfos",
+  "region": "DE",
+  "url": "https://www.gelbe-liste.de/"
+ },
+ {
+  "active": true,
+  "kind": "leitlinien",
+  "name": "Guideline Central Psychiatrie",
+  "note": "Übersichten zu neuen Leitlinien weltweit",
+  "region": "INT",
+  "url": "https://www.guidelinecentral.com/insights/psychiatry/"
+ },
+ {
+  "active": true,
+  "kind": "news",
+  "name": "Healio Psychiatry",
+  "note": "",
+  "region": "US",
+  "url": "https://www.healio.com/psychiatry"
+ },
+ {
+  "active": true,
+  "kind": "tools",
+  "name": "ICD-11 Browser",
+  "note": "Kapitel 06: Psychische Störungen",
+  "region": "INT",
+  "url": "https://icd.who.int/browse/"
+ },
+ {
+  "active": true,
+  "kind": "behoerde",
+  "name": "IQWiG",
+  "note": "Nutzenbewertungen und Berichte",
+  "region": "DE",
+  "url": "https://www.iqwig.de/"
+ },
+ {
+  "active": true,
+  "kind": "journal",
+  "name": "JAMA Psychiatry",
+  "note": "",
+  "region": "US",
+  "url": "https://jamanetwork.com/journals/jamapsychiatry"
+ },
+ {
+  "active": true,
+  "kind": "tools",
+  "name": "LactMed",
+  "note": "Medikamente in der Stillzeit",
+  "region": "US",
+  "url": "https://www.ncbi.nlm.nih.gov/books/NBK501922/"
+ },
+ {
+  "active": true,
+  "kind": "journal",
+  "name": "The Lancet Psychiatry",
+  "note": "",
+  "region": "UK",
+  "url": "https://www.thelancet.com/journals/lanpsy/home"
+ },
+ {
+  "active": true,
+  "kind": "news",
+  "name": "Medscape Psychiatrie",
+  "note": "Deutschsprachige Fachnews",
+  "region": "DE",
+  "url": "https://deutsch.medscape.com/psychiatrie"
+ },
+ {
+  "active": true,
+  "kind": "news",
+  "name": "The Mental Elf",
+  "note": "Kritische Kurzbewertungen neuer Studien",
+  "region": "UK",
+  "url": "https://www.nationalelfservice.net/mental-health/"
+ },
+ {
+  "active": true,
+  "kind": "journal",
+  "name": "Der Nervenarzt",
+  "note": "Organ der DGPPN",
+  "region": "DE",
+  "url": "https://link.springer.com/journal/115"
+ },
+ {
+  "active": true,
+  "kind": "leitlinien",
+  "name": "NICE",
+  "note": "Britische Leitlinien zu psychischer Gesundheit, mit Update-Hinweisen",
+  "region": "UK",
+  "url": "https://www.nice.org.uk/guidance/health-and-social-care-delivery/mental-health"
+ },
+ {
+  "active": true,
+  "kind": "tools",
+  "name": "PSIAC",
+  "note": "Interaktionsdatenbank für Psychopharmaka",
+  "region": "DE",
+  "url": "https://www.psiac.de/"
+ },
+ {
+  "active": true,
+  "kind": "news",
+  "name": "Psychiatric News (APA)",
+  "note": "",
+  "region": "US",
+  "url": "https://psychiatryonline.org/journal/pn"
+ },
+ {
+  "active": true,
+  "kind": "news",
+  "name": "Psychiatric Times",
+  "note": "Tägliche Fachnews, Pipeline-Updates",
+  "region": "US",
+  "url": "https://www.psychiatrictimes.com/"
+ },
+ {
+  "active": false,
+  "kind": "journal",
+  "name": "PubMed",
+  "note": "Literatursuche, nicht für die tägliche News-Suche gedacht",
+  "region": "INT",
+  "url": "https://pubmed.ncbi.nlm.nih.gov/"
+ },
+ {
+  "active": true,
+  "kind": "leitlinien",
+  "name": "RANZCP",
+  "note": "Leitlinien aus Australien und Neuseeland",
+  "region": "AU/NZ",
+  "url": "https://www.ranzcp.org/clinical-guidelines-publications"
+ },
+ {
+  "active": true,
+  "kind": "news",
+  "name": "ScienceDaily Psychiatrie",
+  "note": "Forschungsmeldungen",
+  "region": "INT",
+  "url": "https://www.sciencedaily.com/news/mind_brain/psychiatry/"
+ },
+ {
+  "active": true,
+  "kind": "leitlinien",
+  "name": "SIGN",
+  "note": "Schottische Leitlinien",
+  "region": "UK",
+  "url": "https://www.sign.ac.uk/"
+ },
+ {
+  "active": true,
+  "kind": "leitlinien",
+  "name": "VA/DoD Clinical Practice Guidelines",
+  "note": "u. a. Depression, PTBS, Bipolar, Sucht, Suizid, Insomnie",
+  "region": "US",
+  "url": "https://www.healthquality.va.gov/"
+ },
+ {
+  "active": true,
+  "kind": "leitlinien",
+  "name": "WFSBP",
+  "note": "Internationale Leitlinien zur biologischen Psychiatrie",
+  "region": "INT",
+  "url": "https://www.wfsbp.org/"
+ },
+ {
+  "active": true,
+  "kind": "leitlinien",
+  "name": "WHO Mental Health",
+  "note": "mhGAP, ICD-11, globale Berichte",
+  "region": "INT",
+  "url": "https://www.who.int/health-topics/mental-health"
+ },
+ {
+  "active": true,
+  "kind": "journal",
+  "name": "World Psychiatry",
+  "note": "Journal der WPA, frei zugänglich",
+  "region": "INT",
+  "url": "https://onlinelibrary.wiley.com/journal/20515545"
+ }
+]
