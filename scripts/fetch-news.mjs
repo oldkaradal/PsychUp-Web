@@ -26,7 +26,7 @@ const FEEDS = [
 const TOPICS = {
   depression: ["depress", "antidepress", "esketamin", "ketamin", "major depressive", "dysthym"],
   bipolar: ["bipolar", "manie", "manic", "mania", "lithium"],
-  schizophrenie: ["schizophren", "psychos", "psychot", "antipsychot", "neurolept", "clozapin", "olanzapin"],
+  schizophrenie: ["schizophren", "psychose", "psychosis", "psychoses", "psychotic", "psychotisch", "antipsychot", "neurolept", "clozapin", "olanzapin"],
   angst: ["anxiety", "angst", "panic", "panik", "phobi"],
   zwang: ["obsessive", "ocd", "zwangsstör"],
   ptbs: ["ptsd", "ptbs", "trauma", "posttraum"],
@@ -140,7 +140,7 @@ export function parseHtmlList(html, feed, pageUrl, now = Date.now()) {
     let summary = `${g.innerRest} ${after}`
       .replace(DATE, "")
       .replace(/\b(weiterlesen|mehr lesen|zur pressemitteilung)\b/gi, "")
-      .replace(/(gemeinsame\s+)?(pressemitteilung|stellungnahme|pressestatement)\s*$/i, "")
+      .replace(/(gemeinsame\s+)?(pressemitteilung|stellungnahme|pressestatement)\s*$/i, "").replace(/^[\s|·–-]+|[\s|·–-]+$/g, "")
       .replace(/\s+/g, " ")
       .trim();
     if (summary.length > 320) summary = summary.slice(0, 317).trimEnd() + "…";
